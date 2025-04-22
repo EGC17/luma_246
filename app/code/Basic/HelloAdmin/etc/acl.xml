@@ -3,10 +3,13 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Basic_HelloAdmin::hello" title="Acceso a Hola Mundo" sortOrder="99">
+                <resource id="Magento_Backend::content" title="Content" translate="title" sortOrder="60">
+                    <resource id="Basic_HelloAdmin::hello" title="Access to hello world" sortOrder="99">
+                    </resource>
                 </resource>
             </resource>
         </resources>
     </acl>
 </config>
+
 

@@ -1,18 +1,19 @@
 # Basic_HelloAdmin
 
-Este módulo de Magento 2 muestra un mensaje de "Hello World!" en el panel de administración de Magento. Es un ejemplo sencillo para aprender cómo crear un módulo básico que interactúe con el backend de Magento.
+This Magento 2 module displays a "Hello World!" message in the Magento admin panel. It's a simple example to learn how to create a basic module that interacts with the Magento backend.
 
 # Preview
 
+![preview](preview.png)
 
-
+![acl role](acl1.png)
 
 
 ## Características
 
-- Añade una opción en el menú del panel de administración de Magento.
-- Muestra un mensaje "Hello World!" en una página dedicada dentro del panel de administración.
-- Utiliza buenas prácticas como controladores, permisos de acceso (ACL) y layouts para el backend.
+- Add an option to the Magento admin panel menu.
+- Display a "Hello World!" message on a dedicated page within the admin panel.
+- Use best practices such as controllers, access rights (ACLs), and backend layouts.
 
 ## Estructura del módulo
 
