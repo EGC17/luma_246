@@ -6,7 +6,7 @@ This Magento 2 module displays a "Hello World!" message in the Magento admin pan
 
 ![preview](preview.png)
 
-![acl role](acl1.png)
+![acl role](acl.png)
 
 
 ## Características
