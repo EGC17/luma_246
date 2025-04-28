@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+    <!-- Se dispara después de eliminar un producto del carrito -->
+    <event name="sales_quote_product_remove_after">
+        <observer name="basic_log_cart_remove" instance="Basic\ObserverLogger\Observer\CartRemoveProductObserver" />
+    </event>
+
+</config>

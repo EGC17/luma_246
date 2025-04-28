@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+    <!-- Cliente inicia sesión -->
+    <event name="customer_login">
+        <observer name="basic_log_customer_login" instance="Basic\ObserverLogger\Observer\CustomerLoginObserver" />
+    </event>
+
+    <!-- Cliente se registra -->
+    <event name="customer_register_success">
+        <observer name="basic_log_customer_register" instance="Basic\ObserverLogger\Observer\CustomerRegisterObserver" />
+    </event>
+
+    <!-- Orden creada -->
+    <event name="sales_order_place_after">
+        <observer name="basic_log_order_place" instance="Basic\ObserverLogger\Observer\OrderPlaceObserver" />
+    </event>
+
+    <!-- Se dispara después de agregar un producto al carrito -->
+    <event name="checkout_cart_product_add_after">
+        <observer name="basic_log_cart_add" instance="Basic\ObserverLogger\Observer\CartAddProductObserver" />
+    </event>
+
+    <!-- Se dispara cuando se guarda el quote (ej. al configurar dirección de envío) -->
+    <event name="sales_quote_save_after">
+        <observer name="basic_log_shipping_address_set" instance="Basic\ObserverLogger\Observer\ShippingAddressSetObserver" />
+    </event>
+
+    <!-- Se dispara después de eliminar un producto del carrito -->
+    <event name="sales_quote_remove_item">
+        <observer name="basic_log_cart_remove" instance="Basic\ObserverLogger\Observer\CartRemoveProductObserver" />
+    </event>
+
+    <!-- Se dispara cuando se guarda el método de pago en el checkout -->
+    <event name="checkout_controller_onepage_save_payment_method">
+        <observer name="basic_log_payment_method" instance="Basic\ObserverLogger\Observer\PaymentMethodSelectedObserver" />
+    </event>
+</config>
