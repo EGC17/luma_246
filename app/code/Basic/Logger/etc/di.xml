@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework/ObjectManager/etc/config.xsd">
+
+    <!-- Virtual type for custom log handler -->
+    <virtualType name="Basic\Logger\CustomDebug" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/basic_custom.log</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Virtual type for custom logger -->
+    <virtualType name="Basic\Logger\CustomLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">Basic\Logger\CustomDebug</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Actual class using the virtual logger -->
+    <type name="Basic\Logger\Logger\CustomLogger">
+        <arguments>
+            <argument name="name" xsi:type="string">basic_logger</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">Basic\Logger\CustomDebug</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
